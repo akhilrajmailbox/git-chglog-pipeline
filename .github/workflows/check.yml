@@ -23,13 +23,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.GITHUB_SHA }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
       - name: Get the last commit message
         id: commit_message
         run: |
-          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          COMMIT_MESSAGE=$(git show -s --format=%s)
           echo "Commit message: $COMMIT_MESSAGE"
           echo "message=${COMMIT_MESSAGE}" >> ${GITHUB_OUTPUT}
 
