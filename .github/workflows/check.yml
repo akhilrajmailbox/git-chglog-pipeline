@@ -1,0 +1,35 @@
+name: PR Merge Check
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - edited
+      - reopened
+    branches:
+      - "main"
+
+env:
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
+jobs:
+  pr-validation:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Commit Message Check
+        if: "!contains(github.event.head_commit.message, 'build')"
+        shell: bash
+        run: |-
+          if [[ "${{ github.event.head_commit.message }}" != "fix:"* || "${{ github.event.head_commit.message }}" != "feat:"* ]]; then
+            echo "Commit message does not contain required keywords."
+            exit 1
+          fi
