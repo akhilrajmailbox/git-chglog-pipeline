@@ -2,6 +2,16 @@
 ## [Unreleased]
 
 
+<a name="v0.0.4"></a>
+## [v0.0.4] - 2024-09-26
+### Bug Fixes
+- Upating the Readme doc
+
+### BREAKING CHANGE
+
+May be it will break the demonstration...!
+
+
 <a name="v0.0.3"></a>
 ## [v0.0.3] - 2024-09-26
 ### Features
@@ -29,6 +39,7 @@
 - updating the Readme file
 
 
-[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.4...HEAD
+[v0.0.4]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.1...v0.0.2
