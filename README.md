@@ -1,6 +1,6 @@
 # git-chglog-pipeline
 
-## commit Message format
+### Commit Message Format
 
 * `Feature` 
 
