@@ -37,7 +37,7 @@ jobs:
         env:
           COMMIT_MESSAGE: "${{ steps.commit_message.outputs.message }}"
         run: |-
-          if [[ "${COMMIT_MESSAGE}" =~ ^(feat|fix): ]]; then
+          if [[ "${{ env.COMMIT_MESSAGE }}" =~ ^(feat|fix): ]]; then
             echo "Commit message does not contain required keywords....!"
             exit 1
           fi
