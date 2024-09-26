@@ -2,6 +2,13 @@
 ## [Unreleased]
 
 
+<a name="v0.0.3"></a>
+## [v0.0.3] - 2024-09-26
+### Features
+- updating the Readme file
+- Adding new feature called feature_b, BREAKING CHANGE: Chances of breaking feature_a is more
+
+
 <a name="v0.0.2"></a>
 ## [v0.0.2] - 2024-09-26
 ### Bug Fixes
@@ -22,5 +29,6 @@
 - updating the Readme file
 
 
-[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.3...HEAD
+[v0.0.3]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.1...v0.0.2
