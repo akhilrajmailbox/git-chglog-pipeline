@@ -1,0 +1,57 @@
+name: Sample Build
+
+on:
+  release:
+    types:
+      - "created"
+
+env:
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+  CHANGELOG_BR: main
+
+jobs:
+  chglog:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Check chglog config
+        id: chglog_config
+        shell: bash
+        run: |
+          if test -d ".chglog" ; then
+            if test -f ".chglog/config.yml" ; then
+              echo "present=true" >> ${GITHUB_OUTPUT}
+            fi
+          fi
+
+      - name: Install git-chglog and generate CHANGELOG
+        if: ${{ steps.chglog_config.outputs.present == 'true' }}
+        shell: bash
+        run: |
+          curl -sLfO https://github.com/git-chglog/git-chglog/releases/download/v0.15.4/git-chglog_0.15.4_linux_amd64.tar.gz
+          tar -zxvf git-chglog_0.15.4_linux_amd64.tar.gz
+          chmod +x git-chglog
+          sudo mv git-chglog /usr/local/bin/
+          TAG_NAME=${GITHUB_REF_NAME}
+          /usr/local/bin/git-chglog --config .chglog/config.yml --output CHANGELOG.md
+
+      - name: Commit CHANGELOG
+        if: ${{ steps.chglog_config.outputs.present == 'true' }}
+        shell: bash
+        run: |
+          git fetch
+          git switch -c ${{ env.CHANGELOG_BR }} origin/${{ env.CHANGELOG_BR }}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CHANGELOG.md
+          git commit -m "Update CHANGELOG for ${GITHUB_REF#refs/tags/}  - [skip ci]"
+          git push origin ${{ env.CHANGELOG_BR }}
