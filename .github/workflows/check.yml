@@ -38,6 +38,8 @@ jobs:
           COMMIT_MESSAGE: "${{ steps.commit_message.outputs.message }}"
         run: |-
           if [[ "${{ env.COMMIT_MESSAGE }}" =~ ^(feat|fix): ]]; then
+            echo "Commit message is valid....!"
+          else
             echo "Commit message does not contain required keywords....!"
             exit 1
           fi
