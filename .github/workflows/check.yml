@@ -29,6 +29,7 @@ jobs:
         id: commit_message
         run: |
           COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MESSAGE"
           echo "message=${COMMIT_MESSAGE}" >> ${GITHUB_OUTPUT}
 
       - name: Commit Message Check
