@@ -25,11 +25,16 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Get the last commit message
+        id: commit_message
+        run: |
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          echo "message=${COMMIT_MESSAGE}" >> ${GITHUB_OUTPUT}
+
       - name: Commit Message Check
-        if: "!contains(github.event.head_commit.message, 'build')"
         shell: bash
         run: |-
-          if [[ "${{ github.event.head_commit.message }}" != "fix:"* || "${{ github.event.head_commit.message }}" != "feat:"* ]]; then
+          if [[ "${{ steps.commit_message.outputs.message }}" != "fix:"* || "${{ steps.commit_message.outputs.message }}" != "feat:"* ]]; then
             echo "Commit message does not contain required keywords."
             exit 1
           fi
