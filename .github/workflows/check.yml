@@ -36,7 +36,7 @@ jobs:
       - name: Commit Message Check
         shell: bash
         run: |-
-          if [[ "${{ steps.commit_message.outputs.message }}" != "fix:"* || "${{ steps.commit_message.outputs.message }}" != "feat:"* ]]; then
+          if [[ "${{ steps.commit_message.outputs.message }}" != *"fix:"* || "${{ steps.commit_message.outputs.message }}" != *"feat:"* ]]; then
             echo "Commit message does not contain required keywords."
             exit 1
           fi
