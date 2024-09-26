@@ -2,7 +2,7 @@
 
 ## commit Message format
 
-* Feature 
+* `Feature` 
 
 Example for feature commit message
 
@@ -10,7 +10,7 @@ Example for feature commit message
 feat: Adding feature A
 ```
 
-* Bug Fix
+* `Bug Fix`
 
 Example for bug fix commit message
 
