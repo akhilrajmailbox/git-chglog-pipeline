@@ -17,3 +17,11 @@ Example for bug fix commit message
 ```code
 fix: Patching the code
 ```
+
+* `BREAKING CHANGE Note`
+
+Example for breaking change commit message ; this can be combined with `feat` or `fix`
+
+```code
+feat: Adding new feature called feature_b, BREAKING CHANGE: Chances of breaking feature_a is more
+```
