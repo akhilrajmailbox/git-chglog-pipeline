@@ -20,7 +20,7 @@ fix: Patching the code
 
 * `BREAKING CHANGE Note`
 
-Example for breaking change commit message ; this can be combined with `feat` or `fix`, _This must be in the commit body, not in the commit description_
+Example for breaking change commit message ; this can be combined with `feat`, `fix` or any other format, _This must be in the commit body, not in the commit description_
 
 ```code
 feat: Adding new feature called feature_b
