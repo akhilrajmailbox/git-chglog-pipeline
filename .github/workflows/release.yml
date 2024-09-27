@@ -46,10 +46,12 @@ jobs:
           /usr/local/bin/git-chglog --config .chglog/config.yml --output CHANGELOG.md
 
       - name: Create Pull Request
+        if: ${{ steps.chglog_config.outputs.present == 'true' }}
+        id: create_pr
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.CHGLOG_GITHUB_TOKEN }}
-          commit-message: 'devops: Update CHANGELOG for ${{ github.event.release.tag_name }} - [skip ci]'
+          commit-message: 'devops: Update CHANGELOG for ${{ github.event.release.tag_name }}'
           title: 'CHANGELOG for ${{ github.event.release.tag_name }}'
           committer: GitHub Action <action@github.com>
           author: GitHub Action <action@github.com>
@@ -62,14 +64,10 @@ jobs:
           add-paths: CHANGELOG.md
           # reviewers: akhilrajmailbox
 
-      # - name: Commit CHANGELOG
-      #   if: ${{ steps.chglog_config.outputs.present == 'true' }}
-      #   shell: bash
-      #   run: |
-      #     git fetch
-      #     git switch -c ${{ env.CHANGELOG_BR }} origin/${{ env.CHANGELOG_BR }}
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add CHANGELOG.md
-      #     git commit -m "Update CHANGELOG for ${GITHUB_REF#refs/tags/}  - [skip ci]"
-      #     git push origin ${{ env.CHANGELOG_BR }}
+      - name: Get Envs
+        if: ${{ steps.chglog_config.outputs.present == 'true' }}
+        env:
+          PR_URL: ${{ steps.create_pr.outputs.pull-request-url }}
+        shell: bash
+        run: |
+          echo "PR_URL is ${{ env.PR_URL }}"
