@@ -16,6 +16,7 @@ options:
       Type:
         - feat
         - fix
+        - devops
     sort_by: "Scope"
 
   commit_groups:
@@ -24,9 +25,11 @@ options:
     title_order:
       - feat
       - fix
+      - devops
     title_maps:
       feat: "Features"
       fix: "Bug Fixes"
+      devops: "DevOps"
 
   header:
     pattern: "^(\\w*)(\\(.+\\))?: (.+)$"
