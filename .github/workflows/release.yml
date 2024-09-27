@@ -49,8 +49,8 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.CHGLOG_GITHUB_TOKEN }}
-          commit-message: 'devops: Update CHANGELOG for ${GITHUB_REF#refs/tags/} - [skip ci]'
-          title: 'CHANGELOG for ${GITHUB_REF#refs/tags/}'
+          commit-message: 'devops: Update CHANGELOG for ${{ github.event.release.tag_name }} - [skip ci]'
+          title: 'CHANGELOG for ${{ github.event.release.tag_name }}'
           committer: GitHub Action <action@github.com>
           author: GitHub Action <action@github.com>
           body: >
@@ -59,7 +59,8 @@ jobs:
           base: ${{ env.CHANGELOG_BR }}
           branch: cicd-changelog
           delete-branch: true
-          reviewers: akhilrajmailbox
+          add-paths: CHANGELOG.md
+          # reviewers: akhilrajmailbox
 
       # - name: Commit CHANGELOG
       #   if: ${{ steps.chglog_config.outputs.present == 'true' }}
