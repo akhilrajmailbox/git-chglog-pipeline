@@ -18,9 +18,17 @@ Example for bug fix commit message
 fix: Patching the code
 ```
 
+* `DevOps`
+
+Example for DevOps commit message
+
+```code
+devops: Raising the PR automatically from the github action
+```
+
 * `BREAKING CHANGE Note`
 
-Example for breaking change commit message ; this can be combined with `feat` or `fix`, _This must be in the commit body, not in the commit description_
+Example for breaking change commit message ; this can be combined with `feat`, `fix` or any other format, _This must be in the commit body, not in the commit description_
 
 ```code
 feat: Adding new feature called feature_b
