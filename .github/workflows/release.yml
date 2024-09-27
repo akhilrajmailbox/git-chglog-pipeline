@@ -41,9 +41,7 @@ jobs:
           curl -sLfO https://github.com/git-chglog/git-chglog/releases/download/v0.15.4/git-chglog_0.15.4_linux_amd64.tar.gz
           tar -zxvf git-chglog_0.15.4_linux_amd64.tar.gz
           chmod +x git-chglog
-          sudo mv git-chglog /usr/local/bin/
-          TAG_NAME=${GITHUB_REF_NAME}
-          /usr/local/bin/git-chglog --config .chglog/config.yml --output CHANGELOG.md
+          ./git-chglog --config .chglog/config.yml --output CHANGELOG.md
 
       - name: Create Pull Request
         if: ${{ steps.chglog_config.outputs.present == 'true' }}
