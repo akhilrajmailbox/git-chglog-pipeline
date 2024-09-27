@@ -2,6 +2,17 @@
 ## [Unreleased]
 
 
+<a name="v0.0.8"></a>
+## [v0.0.8] - 2024-09-27
+### DevOps
+- Adding cicd pipeline
+- Update CHANGELOG for v0.0.7
+
+### Pull Requests
+- Merge pull request [#13](https://github.com/akhilrajmailbox/git-chglog-pipeline/issues/13) from akhilrajmailbox/cicd-patch
+- Merge pull request [#12](https://github.com/akhilrajmailbox/git-chglog-pipeline/issues/12) from akhilrajmailbox/cicd-changelog
+
+
 <a name="v0.0.7"></a>
 ## [v0.0.7] - 2024-09-27
 ### Bug Fixes
@@ -94,7 +105,8 @@ May be it will break the demonstration...!
 - updating the Readme file
 
 
-[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.8...HEAD
+[v0.0.8]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.7...v0.0.8
 [v0.0.7]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.6...v0.0.7
 [v0.0.6]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.5...v0.0.6
 [v0.0.5]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.4...v0.0.5
