@@ -70,4 +70,4 @@ jobs:
           PR_URL: ${{ steps.create_pr.outputs.pull-request-url }}
         shell: bash
         run: |
-          echo "PR_URL is ${{ env.PR_URL }}"
+          echo "PR_URL is : ${{ env.PR_URL }}"
