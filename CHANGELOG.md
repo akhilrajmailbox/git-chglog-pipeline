@@ -2,6 +2,17 @@
 ## [Unreleased]
 
 
+<a name="v0.0.6"></a>
+## [v0.0.6] - 2024-09-27
+### DevOps
+- Adding custom config for changelog
+- Adding custom config for changelog
+
+### Pull Requests
+- Merge pull request [#7](https://github.com/akhilrajmailbox/git-chglog-pipeline/issues/7) from akhilrajmailbox/cicd-patch
+- Merge pull request [#4](https://github.com/akhilrajmailbox/git-chglog-pipeline/issues/4) from akhilrajmailbox/cicd-patch
+
+
 <a name="v0.0.5"></a>
 ## [v0.0.5] - 2024-09-26
 ### Bug Fixes
@@ -59,7 +70,8 @@ May be it will break the demonstration...!
 - updating the Readme file
 
 
-[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.5...HEAD
+[Unreleased]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.6...HEAD
+[v0.0.6]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.5...v0.0.6
 [v0.0.5]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.4...v0.0.5
 [v0.0.4]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/akhilrajmailbox/git-chglog-pipeline/compare/v0.0.2...v0.0.3
